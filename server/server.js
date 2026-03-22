@@ -15,7 +15,10 @@ connectDB();
 
 // Middleware
 app.use(cors({
-  origin: 'http://localhost:3000', // ✅ allow Next.js frontend
+  origin: [
+    'http://localhost:3000',
+    'https://brainblitz.vercel.app',
+  ],
   credentials: true
 }));
 app.use(express.json());
