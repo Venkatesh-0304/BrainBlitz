@@ -17,7 +17,8 @@ connectDB();
 app.use(cors({
   origin: [
     'http://localhost:3000',
-    'https://brain-blitz-gules.vercel.app', // ✅ vercel URL
+    'https://brain-blitz-gules.vercel.app',
+    'https://brain-blitz-git-main-venkatesh-0304s-projects.vercel.app', // ✅ add this
   ],
   credentials: true
 }));
