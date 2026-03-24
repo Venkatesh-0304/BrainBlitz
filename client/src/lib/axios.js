@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const API = axios.create({
-  baseURL: 'https://brainblitz-cnwz.onrender.com/api', // ✅ correct URL
+  baseURL: process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3500/api',
 });
 
 API.interceptors.request.use((req) => {

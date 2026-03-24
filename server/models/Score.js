@@ -20,6 +20,18 @@ const scoreSchema = new Schema({
         type:Number,
         required:true
     },
+    answers:[{
+        questionId:{
+            type:mongoose.Schema.Types.ObjectId,
+            ref:"Question",
+        },
+        answer:String,
+        isCorrect:Boolean,
+        answeredInTime:Boolean,
+    }],
+    timeTaken:{
+        type: Number,
+    },
     dateTaken:{
         type:Date,
         default: Date.now()

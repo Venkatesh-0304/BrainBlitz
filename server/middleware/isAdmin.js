@@ -1,7 +1,9 @@
-const isAdmin = (req,res,next)=>{
-    if(req.user.role !== "admin"){
-        return res.status(402).json({message: "Admin only"});
-    }
-    next();
-}
+const isAdmin = (req, res, next) => {
+  const allowedRoles = ['admin', 'superadmin'];
+  if (!allowedRoles.includes(req.user.role)) {
+    return res.status(403).json({ message: 'Access denied. Admins only.' });
+  }
+  next();
+};
+
 module.exports = isAdmin;

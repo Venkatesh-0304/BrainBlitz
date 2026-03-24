@@ -24,6 +24,12 @@ const questionSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    timeLimit:{
+      type: Number,
+      default: 30,
+      min: 5,
+      max: 120,
+    },
   },
   { timestamps: true } // ✅ plural
 );
