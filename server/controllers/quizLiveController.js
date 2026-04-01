@@ -191,6 +191,7 @@ const submitAnswer = async (req, res) => {
       correctAnswer: question.correctAnswer,
     });
   } catch (error) {
+    console.log(error);
     res.status(500).json({ message: 'Server Error', error: error.message });
   }
 };
@@ -202,6 +203,7 @@ const getScoreboard = async (req, res) => {
       .sort({ score: -1 });
     res.status(200).json(scores);
   } catch (error) {
+    console.log(error);
     res.status(500).json({ message: 'Server Error', error: error.message });
   }
 };
